@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block title %}Doctor Page{% endblock %}
+
+{% block content %}
+
+<div class="container mb-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+
+            <div class="card shadow-sm">
+                <div class="card-header bg-dark text-white">
+                    <h5 class="mb-0">Add New Patient</h5>
+                </div>
+
+                <div class="card-body">
+
+
+                    <form method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+
+                        <div class="mb-3">
+                            <label class="form-label">Patient Name</label>
+                            <input type="text" name="full_name" class="form-control" placeholder="Enter patient name">
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Patient Email</label>
+                            <input type="text" name="email" class="form-control" placeholder="Enter patient email">
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Patient Age</label>
+                            <input type="number" name="age" class="form-control" placeholder="Enter patient age" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Gender</label>
+                            <input type="text" name="gender" class="form-control" placeholder="Enter patient gender" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Symptoms</label>
+                            <input type="text" name="symptoms" class="form-control" placeholder="Enter patient symptoms" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Diagnosis</label>
+                            <textarea name="diagnosis" rows="3" class="form-control" placeholder="Enter diagnosis"></textarea>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Prescription</label>
+                            <textarea name="prescription" rows="3" class="form-control" placeholder="Enter prescription"></textarea>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Visit Day</label>
+                            <input type="date" name="date" class="form-control" placeholder="Enter patient visit date" required>
+                        </div>
+
+                        <div class="d-flex justify-content-between">
+                            <a href="{% url 'doctor' %}" class="btn btn-secondary">Cancel</a>
+                            <button type="submit" class="btn btn-success">Save Patient</button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+{% endblock %}

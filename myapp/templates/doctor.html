@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block title %}Doctor Page{% endblock %}
+
+{% block content %}
+<h1>Welcome, Dr. {{ request.user.full_name }}</h1>
+
+<div class="card mt-4">
+    <div class="card-header">
+        Patients List
+        <a href="{% url 'add_patient'%}" class="btn btn-success btn-sm float-end">+ Add New Patient</a>
+    </div>
+    <div class="card-body">
+        <table class="table table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th>#</th>
+                    <th>Patient Name</th>
+                    <th>Patient Email</th>
+                    <th>Patient Age</th>
+                    <th>Gender</th>
+                    <th>Symptoms</th>
+                    <th>Diagnosis</th>
+                    <th>Prescription</th>
+                    <th>Visit Date</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for patient in patients %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{ patient.full_name }}</td>
+                    <td>{{ patient.email }}</td>
+                    <td>{{ patient.age }}</td>
+                    <td>{{ patient.gender }}</td>
+                    <td>{{ patient.symptoms }}</td>
+                    <td>{{ patient.diagnosis }}</td>
+                    <td>{{ patient.prescription }}</td>
+                    <td>{{ patient.date }}</td>
+                    
+                    <td>
+                        <a href="{% url 'edit_patient' patient.id %}" class="btn btn-sm btn-primary">Edit</a>
+                        
+                    </td>
+                </tr>
+                {% endfor %}
+
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

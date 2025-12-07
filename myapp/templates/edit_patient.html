@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Patient</title>
+    <link rel="icon" href="../../static/images/HealthTrack+ Logo - Caring Health Tracking Service.png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f7f7f7;
+        }
+        .container {
+            width: 40%;
+            margin: 50px auto;
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px #ddd;
+        }
+        input, textarea, select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        .btn {
+            background: #3498db;
+            color: white;
+            padding: 12px;
+            width: 100%;
+            border: none;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background: #2980b9;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Edit Patient: {{ patient.full_name }}</h2>
+
+        <form method="POST">
+            {% csrf_token %}
+
+            <label>Full Name</label>
+            <input type="text" name="full_name" value="{{ patient.full_name }}" required>
+
+            <label>Age</label>
+            <input type="number" name="age" value="{{ patient.age }}" required>
+
+            <label>Gender</label>
+            <select name="gender">
+                <option value="Male" {% if patient.gender == "Male" %}selected{% endif %}>Male</option>
+                <option value="Female" {% if patient.gender == "Female" %}selected{% endif %}>Female</option>
+            </select>
+
+            <label>Symptoms</label>
+            <textarea name="symptoms" rows="3">{{ patient.symptoms }}</textarea>
+
+            <label>Diagnosis</label>
+            <textarea name="diagnosis" rows="3">{{ patient.diagnosis }}</textarea>
+
+            <label>Prescription</label>
+            <textarea name="prescription" rows="3">{{ patient.prescription }}</textarea>
+
+            <button type="submit" class="btn">Save Changes</button>
+        </form>
+    </div>
+</body>
+</html>

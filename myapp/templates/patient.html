@@ -1,0 +1,97 @@
+
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ patient.full_name }} - Profile</title>
+    <link rel="icon" href="../../static/images/HealthTrack+ Logo - Caring Health Tracking Service.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="../../static/styles/main.css">
+</head>
+<body class="bg-light">
+
+    <nav>
+        <ul>
+            <li><a href="{% url 'patient' %}">Home</a></li>
+            <li><a href="{% url 'about' %}" >About</a></li>
+            <li><a href="{% url 'patdoctor' %}">Doctors</a></li>
+            <li><a href="{% url 'education' %}">Education</a></li>
+            <li><a href="{% url 'add_message' %}">Message</a></li>
+            <li><a href="{% url 'add_record' %}">Add Record</a></li>
+        </ul>
+    </nav>
+
+    {% for record in records %}
+
+    <div class="container mt-4">
+
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-3 text-center">
+                        {% if record.profile_picture %}
+                            <img src="{{ record.profile_picture.url }}" class="img-fluid rounded-circle mb-3" alt="Patient Image" >
+                        {% else %}
+                            <img src="{% static 'images/default_patient.png' %}" class="img-fluid rounded-circle mb-3" alt="Default Image">
+                        {% endif %}
+                    </div>
+
+                    <div class="col-md-9">
+                        <h3>{{ patient.full_name }}</h3>
+                        <p><strong>Your Doctor:</strong> 
+                            {% if patient.doctor %}
+                            Dr. {{ patient.doctor.name }}
+                            {% else %}
+                            Dr Denis Njoroge
+                            {% endif %}
+                        </p>
+                        <p><strong>Age:</strong> {{ record.age }}</p>
+                        <p><strong>Disease Diagnosed:</strong> {{ patient.diagnosed_disease|default:"Not specified" }}</p>
+                        <p><strong>Next Visit Date:</strong> {{ patient.next_visit_date|date:"M d, Y"|default:"Not scheduled" }}</p>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+
+        <h4 class="mt-4">Health Records</h4>
+        <a href="{% url 'add_record'%}" class="btn btn-success btn-sm float-end">+ Add New Record</a>
+        <table class="table table-striped table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th>Date</th>
+                    <th>Exercise Type</th>
+                    <th>Hours</th>
+                    <th>Weight (kg)</th>
+                    <th>Height (cm)</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for record in records %}
+                    <tr>
+                        <td>{{ record.date }}</td>
+                        <td>{{ record.exercise_type }}</td>
+                        <td>{{ record.hours }}</td>
+                        <td>{{ record.weight }}</td>
+                        <td>{{ record.height }}</td>
+                    </tr>
+                {% empty %}
+                    <tr>
+                        <td colspan="5" class="text-center text-muted">No health records found.</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+
+    <footer>
+        &copy; 2025 HealthTrack+ | All Rights Reserved
+    </footer>
+    <script src="../../static/bootstrap/js/bootstrap.js"></script>
+</body>
+</html>

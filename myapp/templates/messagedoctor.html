@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block title %}Messages{% endblock %}
+
+{% block content %}
+<h1>Welcome to the Doctor's Messages</h1>
+
+<div class="card mt-4">
+    <div class="card-header">
+        Message List
+        <!-- <a href="{% url 'add_patient'%}" class="btn btn-success btn-sm float-end">+ Add New Patient</a> -->
+    </div>
+    <div class="card-body">
+        <table class="table table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th>#</th>
+                    <!-- <th>Patient profile picture</th> -->
+                    <th>Patient Name</th>
+                    <th>Email Address</th>
+                    <th>Phone Number</th>
+                    <th>Message</th>
+                    <!-- <th>Diagnosis</th>
+                    <th>Prescription</th> -->
+                    <th>Message Date</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for msg in all_messages %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{ msg.full_name }}</td>
+                    <td>{{ msg.email }}</td>
+                    <td>{{ msg.number }}</td>
+                    <td>{{ msg.message_text }}</td>
+                    <!-- <td>{{ message.diagnosis }}</td>
+                    <td>{{ message.prescription }}</td> -->
+                    <td>{{ msg.date }}</td>
+                    <td>
+                        <a href="#" class="btn btn-sm btn-primary">Edit</a>
+                    </td>
+                </tr>
+                {% endfor %}
+
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

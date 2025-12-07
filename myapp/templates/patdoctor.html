@@ -1,0 +1,110 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Doctors</title>
+    <link rel="icon" href="../../static/images/HealthTrack+ Logo - Caring Health Tracking Service.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="../../static/styles/main.css">
+    <style>
+            footer {
+            text-align: center;
+            padding: 20px;
+            background-color: lightslategray;
+            color: #555;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            font-size: 14px;
+            border-top: 20px;
+        }
+            nav{
+            background-color: lightslategray;
+            /* display: flex;
+            flex-direction: column;
+            align-content: center;
+            justify-content:space-around;
+            align-items: center; */
+        }
+        nav ul{
+            display:flex;
+            flex-direction: row;
+            justify-content: space-around;
+            list-style-type: none;
+            height: 50px;
+            align-items: center;
+        }
+        /* nav ul li{
+            /* margin: 0 30px 0 30px; */
+        /* } */ 
+        nav ul li a{
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        nav ul li a:hover{
+            background-color: aqua;
+            color: black;
+            padding: 10px 15px;
+            border-radius: 30px;
+        }
+    </style>
+</head>
+<body class="bg-light">
+
+    <nav>
+        <ul>
+            <li><a href="{% url 'patient' %}">Home</a></li>
+            <li><a href="{% url 'about' %}" >About</a></li>
+            <li><a href="{% url 'patdoctor' %}">Doctors</a></li>
+            <li><a href="{% url 'education' %}">Education</a></li>
+            <li><a href="{% url 'add_message' %}">Message</a></li>
+            <li><a href="{% url 'add_record' %}">Add Record</a></li>
+        </ul>
+    </nav>
+
+    <div class="card-body">
+        <table class="table table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th>#</th>
+                    <!-- <th>Patient profile picture</th> -->
+                    <th>Doctor Name</th>
+                    <th>Specialization</th>
+                    <th>Department</th>
+                    <th>Email Addres</th>
+                    <th>Phone Number</th>
+                    <!-- <th>Prescription</th>
+                    <th>Visit Date</th> -->
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for doc in doctors %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{ doc.name }}</td>
+                    <td>{{ doc.specialization }}</td>
+                    <td>{{ doc.department }}</td>
+                    <td>{{ doc.email }}</td>
+                    <td>{{ doc.phone_number }}</td>
+                    <!-- <td>{{ patient.prescription }}</td>
+                    <td>{{ patient.date }}</td> -->
+                    <td>
+                        <!-- <a href="#" class="btn btn-sm btn-primary">Edit</a> -->
+                        
+                    </td>
+                </tr>
+                {% endfor %}
+
+            </tbody>
+        </table>
+    </div>
+    <footer>
+        &copy; 2025 HealthTrack+ | All Rights Reserved
+  </footer>
+</body>
+</html>

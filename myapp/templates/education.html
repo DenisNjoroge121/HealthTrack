@@ -1,0 +1,152 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Education</title>
+    <link rel="icon" href="../../static/images/HealthTrack+ Logo - Caring Health Tracking Service.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="../../static/styles/main.css">
+</head>
+<body class="bg-light">
+
+    <nav>
+        <ul>
+            <li><a href="{% url 'patient' %}">Home</a></li>
+            <li><a href="{% url 'about' %}" >About</a></li>
+            <li><a href="{% url 'patdoctor' %}">Doctors</a></li>
+            <li><a href="{% url 'education' %}">Education</a></li>
+            <li><a href="{% url 'add_message' %}">Message</a></li>
+            <li><a href="{% url 'add_record' %}">Add Record</a></li>
+        </ul>
+    </nav>
+
+    <ol>
+        <li><h2>Malaria</h2></li>
+        <p><strong class="main">•Causes:</strong class="main"><br>Caused by <span>Plasmodium</span> parasites transmitted through bites of infected female Anopheles mosquitoes. Poor sanitation and stagnant water promote mosquito breeding.</p>
+        <p><strong class="main">•Symptoms:</strong class="main"><br>High fever, chills, sweating, headache, muscle pain, vomiting, and fatigue. Severe cases may lead to anemia or organ failure</p>
+        <p><strong class="main">•Prevention:</strong class="main"><br>High fever, chills, sweating, headache, muscle pain, vomiting, and fatigue. Severe cases may lead to anemia or organ failure</p>
+
+        <li><h2>Typhoid Fever</h2></li>
+        <p><strong class="main">•Causes:</strong class="main"><br>Infection by <span>Salmonella typhi</span> bacteria through contaminated food or water. Poor hygiene and sanitation are major factors.</p>
+        <p><strong class="main">•Symptoms:</strong class="main"><br>High fever, weakness, stomach pain, headache, constipation or diarrhea, and loss of appetite.</p>
+        <p><strong class="main">•Prevention:</strong class="main"><br>Drink clean or boiled water, wash hands thoroughly, eat properly cooked food, and get the typhoid vaccine.</p>
+
+        <li><h2>Cholera</h2></li>
+        <p><strong class="main">•Causes:</strong class="main"><br>Infection by <span>Vibrio cholerae</span>  bacteria found in contaminated water or food. Common in areas with poor sanitation.</p>
+        <p><strong class="main">•Symptoms:</strong class="main"><br>Profuse watery diarrhea, vomiting, leg cramps, and dehydration which can lead to death if untreated.</p>
+        <p><strong class="main">•Prevention:</strong class="main"><br>Drink safe water, wash fruits and vegetables, practice hand hygiene, and improve sanitation facilities.</p>
+
+        <li><h2>Tuberculosis (TB)</h2></li>
+        <p><strong class="main">•Causes:</strong class="main"><br>Caused by <span>Mycobacterium tuberculosis</span> bacteria, spread through droplets from coughing or sneezing..</p>
+        <p><strong class="main">•Symptoms:</strong class="main"><br>Persistent cough (lasting over 3 weeks), chest pain, fever, night sweats, and weight loss.</p>
+        <p><strong class="main">•Prevention:</strong class="main"><br>BCG vaccination, early diagnosis and treatment, and good ventilation in living areas.</p>
+
+        <li><h2>Pneumonia</h2></li>
+        <p><strong class="main">•Causes:</strong class="main"><br>Infection by bacteria,<span>Streptococcus pneumoniae,</span>  viruses, or fungi that inflame lung tissue.</p>
+        <p><strong class="main">•Symptoms:</strong class="main"><br>Cough with phlegm, fever, chills, shortness of breath, and chest pain.</p>
+        <p><strong class="main">•Prevention:</strong class="main"><br>Get vaccinated, avoid smoking, practice hand hygiene, and treat respiratory infections promptly.</p>
+
+        <li><h2>Dengue Fever</h2></li>
+        <p><strong class="main">•Causes:</strong class="main"><br>Caused by dengue virus transmitted through <span>Aedes</span> mosquitoes.</p>
+        <p><strong class="main">•Symptoms:</strong class="main"><br>Sudden high fever, severe headache, pain behind eyes, joint and muscle pain, skin rash, and bleeding gums.</p>
+        <p><strong class="main">•Prevention:</strong class="main"><br>Use mosquito repellents, wear long sleeves, cover water containers, and prevent mosquito breeding.</p>
+
+        <li><h2>COVID-19</h2></li>
+        <p><strong class="main">•Causes:</strong class="main"><br>Caused by SARS-CoV-2 coronavirus, transmitted via droplets, surfaces, and air in close spaces.</p>
+        <p><strong class="main">•Symptoms:</strong class="main"><br>Fever, dry cough, tiredness, sore throat, loss of taste or smell, difficulty breathing in severe cases.</p>
+        <p><strong class="main">•Prevention:</strong class="main"><br>Get vaccinated, wear masks, maintain social distance, wash hands regularly, and stay home when ill.</p>
+
+        <li><h2>Hepatitis B</h2></li>
+        <p><strong class="main">•Causes:</strong class="main"><br>Caused by the Hepatitis B virus, transmitted through blood, sexual contact, or from mother to child during birth.</p>
+        <p><strong class="main">•Symptoms:</strong class="main"><br>Jaundice (yellow eyes/skin), fatigue, loss of appetite, dark urine, abdominal pain.</p>
+        <p><strong class="main">•Prevention:</strong class="main"><br>Get vaccinated, avoid sharing needles or razors, and practice safe sex.</p>
+
+        <li><h2>HIV/AIDS</h2></li>
+        <p><strong class="main">•Causes:</strong class="main"><br>Human Immunodeficiency Virus (HIV) attacks the immune system. Spread through sexual contact, contaminated needles, or mother-to-child transmission.</p>
+        <p><strong class="main">•Symptoms:</strong class="main"><br>Weight loss, chronic fatigue, fever, night sweats, frequent infections.</p>
+        <p><strong class="main">•Prevention:</strong class="main"><br>Use condoms, get tested regularly, avoid sharing needles, and ensure blood transfusions are screened.</p>
+
+        <li><h2>Measles</h2></li>
+        <p><strong class="main">•Causes:</strong class="main"><br>Measles virus, spread through droplets from coughs or sneezes.</p>
+        <p><strong class="main">•Symptoms:</strong class="main"><br>Fever, cough, runny nose, red eyes, followed by a rash.</p>
+        <p><strong class="main">•Prevention:</strong class="main"><br>MMR (measles, mumps, rubella) vaccination and good hygiene practices.</p>
+
+        <li><h2>Meningitis</h2></li>
+        <p><strong class="main">•Causes:</strong class="main"><br>Infection of membranes around the brain and spinal cord by bacteria or viruses.</p>
+        <p><strong class="main">•Symptoms:</strong class="main"><br>Stiff neck, headache, high fever, nausea, vomiting, sensitivity to light, confusion.</p>
+        <p><strong class="main">•Prevention:</strong class="main"><br>Vaccination, avoiding close contact with infected people, and prompt antibiotic treatment.</p>
+
+        <li><h2>Anemia</h2></li>
+        <p><strong class="main">•Causes:</strong class="main"><br>Iron deficiency, blood loss, or chronic disease.</p>
+        <p><strong class="main">•Symptoms:</strong class="main"><br>Pale skin, fatigue, dizziness, shortness of breath, irregular heartbeat.</p>
+        <p><strong class="main">•Prevention:</strong class="main"><br>Eat iron-rich foods (spinach, beans, red meat), take supplements, and treat underlying causes.</p>
+
+        <li><h2>Peptic Ulcer</h2></li>
+        <p><strong class="main">•Causes:</strong class="main"><br><span>Helicobacter pylori</span> infection, excessive acid, long-term use of painkillers, or stress.</p>
+        <p><strong class="main">•Symptoms:</strong class="main"><br>Burning stomach pain, nausea, bloating, and heartburn.</p>
+        <p><strong class="main">•Prevention:</strong class="main"><br>Avoid NSAIDs, reduce alcohol, manage stress, eat balanced meals.</p>
+
+        <li><h2>Asthma</h2></li>
+        <p><strong class="main">•Causes:</strong class="main"><br><span>Inflammation of airways triggered by dust, smoke, cold air, or allergens.</p>
+        <p><strong class="main">•Symptoms:</strong class="main"><br>Wheezing, shortness of breath, coughing, tightness in chest.</p>
+        <p><strong class="main">•Prevention:</strong class="main"><br>Avoid triggers, use prescribed inhalers, keep indoor air clean.</p>
+
+        <li><h2>Kidney Disease</h2></li>
+        <p><strong class="main">•Causes:</strong class="main"><br>Diabetes, hypertension, infections, or prolonged use of painkillers.</p>
+        <p><strong class="main">•Symptoms:</strong class="main"><br>Swelling in legs, fatigue, dark urine, reduced urination.</p>
+        <p><strong class="main">•Prevention:</strong class="main"><br>Drink enough water, manage blood pressure and blood sugar, avoid excessive salt.</p>
+
+        <li><h2>Chronic Obstructive Pulmonary Disease (COPD)</h2></li>
+        <p><strong class="main">•Causes:</strong class="main"><br>Long-term smoking, air pollution, chemical exposure.</p>
+        <p><strong class="main">•Symptoms:</strong class="main"><br>Persistent cough, mucus production, wheezing, shortness of breath..</p>
+        <p><strong class="main">•Prevention:</strong class="main"><br>Stop smoking, avoid polluted air, wear masks at work, and exercise the lungs through breathing exercises.</p>
+
+        <li><h2>liver Cirrhosis</h2></li>
+        <p><strong class="main">•Causes:</strong class="main"><br>Long-term alcohol use, hepatitis B/C, or fatty liver.</p>
+        <p><strong class="main">•Symptoms:</strong class="main"><br>Jaundice, fatigue, swollen legs, easy bruising.</p>
+        <p><strong class="main">•Prevention:</strong class="main"><br>limit alcohol, get vaccinated for hepatitis, maintain healthy weight.</p>
+
+        <li><h2>Osteoporosis</h2></li>
+        <p><strong class="main">•Causes:</strong class="main"><br>Low calcium and vitamin D, hormonal changes, sedentary habits.</p>
+        <p><strong class="main">•Symptoms:</strong class="main"><br>Fragile bones, back pain, frequent fractures.</p>
+        <p><strong class="main">•Prevention:</strong class="main"><br>Eat calcium-rich foods (milk, yogurt), do weight-bearing exercises, get sunlight for vitamin D.</p>
+
+        <li><h2>Cancer (lifestyle-related types like lung, colon, breast)</h2></li>
+        <p><strong class="main">•Causes:</strong class="main"><br>Tobacco use, poor diet, alcohol consumption, radiation, genetics.</p>
+        <p><strong class="main">•Symptoms:</strong class="main"><br>Unexplained lumps, weight loss, fatigue, bleeding.</p>
+        <p><strong class="main">•Prevention:</strong class="main"><br>Avoid smoking, eat fiber-rich foods, limit alcohol, regular health checks.</p>
+
+        <li><h2>Depression</h2></li>
+        <p><strong class="main">•Causes:</strong class="main"><br>Chemical imbalance in brain, chronic stress, trauma, substance abuse.</p>
+        <p><strong class="main">•Symptoms:</strong class="main"><br>Sadness, loss of interest, sleep disturbance, fatigue, suicidal thoughts.</p>
+        <p><strong class="main">•Prevention:</strong class="main"><br>Regular exercise, social interaction, therapy, mindfulness, adequate rest.</p>
+
+        <li><h2>Obesity</h2></li>
+        <p><strong class="main">•Causes:</strong class="main"><br>Excess calorie intake, sedentary lifestyle, hormonal imbalance.</p>
+        <p><strong class="main">•Symptoms:</strong class="main"><br>Excess body fat, breathlessness, fatigue, risk of diabetes and heart problems.</p>
+        <p><strong class="main">•Prevention:</strong class="main"><br>Balanced diet, daily physical activity, portion control, and proper sleep.</p>
+
+        <li><h2>Heart Disease (Coronary Artery Disease)</h2></li>
+        <p><strong class="main">•Causes:</strong class="main"><br>Build-up of plaque in arteries due to high cholesterol, smoking, diabetes, and poor diet.</p>
+        <p><strong class="main">•Symptoms:</strong class="main"><br>Chest pain, shortness of breath, fatigue, irregular heartbeat.</p>
+        <p><strong class="main">•Prevention:</strong class="main"><br>Eat heart-friendly foods (fruits, vegetables, whole grains), exercise, avoid tobacco, and maintain healthy blood pressure.</p>
+
+        <li><h2>Hypertension (High Blood Pressure)</h2></li>
+        <p><strong class="main">•Causes:</strong class="main"><br>High salt intake, stress, smoking, obesity, inactivity, and family history.</p>
+        <p><strong class="main">•Symptoms:</strong class="main"><br>Often no symptoms; sometimes headaches, dizziness, or chest discomfort.</p>
+        <p><strong class="main">•Prevention:</strong class="main"><br>Eat low-sodium meals, exercise daily, avoid alcohol and smoking, manage stress.</p>
+
+        <li><h2>Diabetes Mellitus (Type 2)</h2></li>
+        <p><strong class="main">•Causes:</strong class="main"><br>Insulin resistance due to obesity, lack of exercise, poor diet high in sugar and fats, and genetics.</p>
+        <p><strong class="main">•Symptoms:</strong class="main"><br>Frequent urination, excessive thirst, blurred vision, fatigue, slow wound healing.</p>
+        <p><strong class="main">•Prevention:</strong class="main"><br>Eat balanced meals, exercise regularly, maintain healthy weight, avoid sugary drinks, and check blood sugar levels.</p>
+        
+    </ol>
+
+    <footer>
+        &copy; 2025 HealthTrack+ | All Rights Reserved
+    </footer>
+</body>
+</html>
