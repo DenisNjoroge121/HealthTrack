@@ -6,8 +6,8 @@ from django.db import transaction
 from .models import CustomUser, Doctor, Patient, Record, Message
 from django.utils import timezone
 
-def home(request):
-    return render(request, 'home.html')
+def index(request):
+    return render(request, 'index.html')
 
 def user_login(request):
     if request.method == 'POST':
@@ -81,7 +81,7 @@ def register_user(request):
 def doctor(request):
     if request.user.role != 'doctor':
         messages.error(request, "Access denied. Only doctors can view this page.")
-        return redirect('home')
+        return redirect('index')
     patients= Patient.objects.all()
     return render(request, 'doctor.html',{'patients': patients})
 
@@ -89,7 +89,7 @@ def doctor(request):
 def add_patient(request):
     if request.user.role != 'doctor':
         messages.error(request, "Access denied.")
-        return redirect('home')
+        return redirect('index')
     if request.method == 'POST':
         full_name = request.POST.get('full_name')
         email = request.POST.get('email')
@@ -118,7 +118,7 @@ def add_patient(request):
 def patient(request):
     if request.user.role != 'patient':
         messages.error(request, "Access denied. Only patients can view this page.")
-        return redirect('home')
+        return redirect('index')
     records = Record.objects.all()
     return render(request, 'patient.html',{'records':records})
 
@@ -126,7 +126,7 @@ def patient(request):
 def add_record(request):
     if request.user.role != 'patient':
         messages.error(request, "Access denied.")
-        return redirect('home')
+        return redirect('index')
     if request.method =='POST':
         exercise_type = request.POST.get('exercise_type')
         hours = request.POST.get('hours')
@@ -151,7 +151,7 @@ def add_record(request):
 def add_doctor(request):
     if request.user.role != 'doctor':
         messages.error(request, "Access denied.")
-        return redirect('home')
+        return redirect('index')
     if request.method == 'POST':
         full_name = request.POST.get('name')
         email = request.POST.get('email')
@@ -174,7 +174,7 @@ def add_doctor(request):
 def messagedoctor(request):
     if request.user.role != 'doctor':
         messages.error(request, "Access denied.")
-        return redirect('home')
+        return redirect('index')
     all_messages = Message.objects.all()
     return render(request, 'messagedoctor.html', {'all_messages': all_messages})
 
@@ -182,7 +182,7 @@ def messagedoctor(request):
 def add_message(request):
     if request.user.role != 'patient':
         messages.error(request, "Access denied.")
-        return redirect('home')
+        return redirect('index')
     if request.method == 'POST':
         full_name = request.POST.get('full_name')
         email = request.POST.get('email')
@@ -203,7 +203,7 @@ def add_message(request):
 def edit_patient(request, patient_id):
     if request.user.role != 'doctor':
         messages.error(request, "Access denied.")
-        return redirect('home')
+        return redirect('index')
     patient = get_object_or_404(Patient, id=patient_id)
 
     if request.method == 'POST':
@@ -229,6 +229,6 @@ def aboutdo(request):
 def patdoctor(request):
     if request.user.role != 'doctor':
         messages.error(request, "Access denied.")
-        return redirect('home')
+        return redirect('index')
     doctors = Doctor.objects.all()
     return render(request, 'patdoctor.html',{'doctors':doctors})
