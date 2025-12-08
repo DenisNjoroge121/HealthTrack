@@ -227,7 +227,7 @@ def aboutdo(request):
     return render(request, 'aboutdo.html')
 
 def patdoctor(request):
-    if request.user.role != 'doctor':
+    if request.user.role != 'patient':
         messages.error(request, "Access denied.")
         return redirect('index')
     doctors = Doctor.objects.all()
